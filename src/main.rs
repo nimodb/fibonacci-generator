@@ -18,14 +18,20 @@ fn get_input() -> u32 {
 }
 
 fn fibonacci(n: u32) -> u32 {
+    if n == 0 {
+        return 0;
+    } else if n == 1 {
+        return 1;
+    }
+
     let mut a = 0;
     let mut b = 1;
 
-    for _ in 0..n {
+    for _ in 2..=n {
         let temp = a;
         a = b;
         b = temp + b;
     }
 
-    a
+    b
 }
